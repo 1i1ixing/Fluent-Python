@@ -25,7 +25,7 @@ class Vector:
     
 
 a = Vector(2, 4)
-print(a)
+print(a) # this will call __str__ and print the string representation of the object
 print(a[0])
 print(len(a))
 
