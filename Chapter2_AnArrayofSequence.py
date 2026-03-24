@@ -28,3 +28,28 @@ print(lst)
 lst = [['O'] * 3 for i in range(3)]
 lst[0].append('X') 
 print(lst)
+
+# Augumented Assignment:
+a = [1,2]
+b = [3,4]
+print(id(a))
+a += b # inplace assignment
+print(id(a)) # same address
+
+a = [1,2]
+b = [3,4]
+print(id(a))
+a = a + b # a + b creates a new list and rebounds to a
+print(id(a)) # different address
+
+t = (1, 2, [10,30])
+print(id(t[2]))
+t[2] += [40,50]
+print(t) # it would output error, but it works
+print(id(t[2])) # same address
+
+t = (1, 2, [10,30])
+print(id(t[2]))
+t[2] = t[2] + [40,50]
+print(t) # it would output error, but it doesn't work
+print(id(t[2])) # same address
