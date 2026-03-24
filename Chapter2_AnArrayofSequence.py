@@ -15,3 +15,16 @@ shanghai_data = ('Shanghai', 'CN', 17.836, LatLongConstuct(31.166667, 121.466667
 shanghai = CityConstuct._make(shanghai_data) #make an instance of City from a sequence or iterable，_make is a class method
 print(shanghai)
 print(shanghai._asdict()) # return a new OrderedDict which maps field names to their values, _asdict is an instance method
+
+# Slicing: in a * n, if a is a sequence containing MUTABLE objects, it will create a sequence that all the positions referring to the same mutable object
+lst = [[]] * 3
+lst[0].append('X')
+print(lst)
+
+lst = [['O'] * 3] * 3
+lst[0].append('X')
+print(lst) 
+
+lst = [['O'] * 3 for i in range(3)]
+lst[0].append('X') 
+print(lst)
