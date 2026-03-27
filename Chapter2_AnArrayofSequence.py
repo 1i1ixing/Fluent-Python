@@ -53,3 +53,37 @@ print(id(t[2]))
 t[2] = t[2] + [40,50]
 print(t) # it would output error, but it doesn't work
 print(id(t[2])) # same address
+
+# bisect module: bisection algorithms for maintaining sorted lists
+import bisect
+HAYSTACK = [1, 3, 5, 7, 9]
+NEEDLES = 6
+print(bisect.bisect(HAYSTACK, NEEDLES)) # return the insertion point which comes after (to the right of) any existing entries of NEEDLES in HAYSTACK
+bisect.insort(HAYSTACK, NEEDLES) # insert NEEDLES in HAYSTACK in sorted order
+print(HAYSTACK)
+
+# Array: more efficient than lists for large data sets (e.g., only contain numbers), but less flexible
+from array import array
+from random import random
+floats = array('d', (random() for i in range(10**7))) # create an array of doubles (8 bytes each)
+print(floats[-1])
+
+# Memory views: memoryview objects allow you to access the memory of other binary objects without copying
+numbers = array('h', [-2, -1, 0, 1, 2])
+memv = memoryview(numbers) # create a memoryview of the numbers array
+print(memv[0])
+memv_oct = memv.cast('B') # this operation is read-only, cast the memoryview to bytes (unsigned char)
+print(memv_oct)
+print(memv_oct.tolist())
+print(numbers)
+memv_oct[5] = 4
+print(numbers)
+
+# Deque: double-ended queue, optimized for inserting and removing from both ends
+from collections import deque
+dq = deque(range(10), maxlen=10) # create a deque with a maximum length of 10
+print(dq)
+dq.popleft() # remove and return the leftmost item
+print(dq)
+dq.appendleft(-1) # add an item to the left end
+print(dq)
