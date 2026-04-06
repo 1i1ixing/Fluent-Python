@@ -48,7 +48,6 @@ DIAL_CODES = [
     (92, 'Pakistan'),
     (880, 'Bangladesh'),
     (234, 'Nigeria'),
-    (7, 'Russia'),
     (81, 'Japan'),
 ]
 d1 = dict(DIAL_CODES)
